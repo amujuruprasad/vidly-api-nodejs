@@ -39,10 +39,7 @@ const data = [
 ];
 
 async function seed() {
-  await mongoose.connect(config.get("db"), {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  });
+  await mongoose.connect(config.get("db"));
 
   await Movie.deleteMany({});
   await Genre.deleteMany({});
